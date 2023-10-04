@@ -3,6 +3,8 @@
 name: CI
 
 on:
+  repository_dispatch:
+    types: [ new ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
@@ -15,3 +17,6 @@ jobs:
 
       - name: Run a one-line script
         run: ls -l
+
+      - name: Run a one-line script
+        run: sleep 30
